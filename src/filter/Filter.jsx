@@ -1,4 +1,5 @@
 import { Label } from "./Filter.styled";
+import PropTypes from "prop-types";
 
 export default function Filter({ filter, change }) {
   return (
@@ -8,3 +9,8 @@ export default function Filter({ filter, change }) {
     </Label>
   );
 }
+
+Filter.protoTypes = {
+  filter: PropTypes.string.isRequired,
+  change: PropTypes.func.isRequired,
+};

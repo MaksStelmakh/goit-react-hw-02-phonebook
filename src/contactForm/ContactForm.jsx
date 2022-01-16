@@ -1,5 +1,6 @@
 import React from "react";
 import shortid from "shortid";
+import PropTypes from "prop-types";
 import { Form } from "./ContactForm.styled";
 
 export default class ContactForm extends React.Component {
@@ -55,3 +56,5 @@ export default class ContactForm extends React.Component {
     );
   }
 }
+
+ContactForm.protoTypes = { onSubmit: PropTypes.func.isRequired };

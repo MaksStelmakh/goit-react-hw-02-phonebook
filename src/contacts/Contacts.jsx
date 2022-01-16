@@ -1,4 +1,5 @@
 import { List } from "./Contacts.styled";
+import PropTypes from "prop-types";
 
 export default function Contacts({ filter, deleteElem }) {
   return (
@@ -19,3 +20,14 @@ export default function Contacts({ filter, deleteElem }) {
     </List>
   );
 }
+
+Contacts.protoTypes = {
+  filter: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  deleteElem: PropTypes.func.isRequired,
+};
