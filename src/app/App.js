@@ -18,11 +18,6 @@ export default class App extends React.Component {
 
   addNewContact = ({ name, number }) => {
     const { contacts } = this.state;
-    const contact = {
-      id: shortid.generate(),
-      name,
-      number,
-    };
     if (
       contacts.find(
         (contact) => contact.name.toLowerCase() === name.toLowerCase()
@@ -30,6 +25,11 @@ export default class App extends React.Component {
     ) {
       alert(`${name} is already in contacts.`);
     } else {
+      const contact = {
+        id: shortid.generate(),
+        name,
+        number,
+      };
       this.setState(({ contacts }) => ({
         contacts: [...contacts, contact],
       }));
